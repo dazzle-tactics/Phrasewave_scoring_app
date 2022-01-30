@@ -16,6 +16,14 @@
         <td>|</td>
         <td>{{team.points}}</td>
     </tr>
+    </td>
+        <td>|</td>
+        <td><a href="/teams/edit/{{team.id}}">Edit</a></td>
+    </tr>
+    </td>
+        <td>|</td>
+        <td><a href="/teams/delete/{{team.id}}">Delete</td>
+    </tr>
     {% endfor %}
 </table>
 {% endblock %}

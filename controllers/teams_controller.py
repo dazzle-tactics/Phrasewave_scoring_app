@@ -19,6 +19,10 @@ def show(id):
     contestants = team_repository.show_members(team)
     return render_template("locations/show.html", team=team, contestants=contestants)
 
+@teams_blueprint.route("teams/edit/<id>")
+def edit(id):
+    
+
 # #New
 # @teams_blueprint.route("/teams/new")
 # def new_team():

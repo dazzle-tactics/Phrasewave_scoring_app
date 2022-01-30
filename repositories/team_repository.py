@@ -42,7 +42,7 @@ def show_members(id):
     members = []
 
     sql = "SELECT * FROM contestants WHERE team_id = %s"
-    values = [team_id]
+    values = [id]
     result = run_sql(sql, values)
 
     if result is not None:
