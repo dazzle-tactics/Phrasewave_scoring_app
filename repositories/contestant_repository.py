@@ -11,7 +11,7 @@ def save(contestant):
     values = [contestant.name, contestant.occupation, contestant.fave_phrase, contestant.team.id]
     results = run_sql(sql,values)
     
-    id = results[0][0]
+    id = results[0]['id']
     contestant.id = id
     return contestant
 
