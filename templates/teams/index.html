@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+    <tr>
+        <th>Name</th>
+        <td>|</td>
+        <th>Score</th>
+    </tr>
+    {% for team in teams %}
+    <tr>
+        <td>
+            <!-- <a href="teams/{team.id}}"> -->
+            {{team.name}}
+        <!-- </a> -->
+    </td>
+        <td>|</td>
+        <td>{{team.points}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!-- {% extends "base.html" %}
+{% block content %}
+
+
+{% for contestant in all_contestants %}
+  <div class="contestant">
+    <div class="content">
+      <a href="/contestants/{{contestant.id}}">{{contestant.name}}</a>
+      <div class="name">
+        {{contestant.occupation}}
+        <span class="fave_phrase">{{contestant.fave_phrase}}</span>
+        <p><i>{{contestant.team.name()}}</i></p>
+      </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/contestants/{{contestant.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %} -->

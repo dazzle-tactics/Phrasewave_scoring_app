@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{team.name}} </h1>
+
+<p>Score: {{ team.score }}</p>
+
+<h3>Team members:</h3>
+
+<ul>
+    {% for contestant in contestants  %}
+    <li>{{contestant.name}}</li>
+    <li>{{contestant.occupation}}</li>
+    <li>{{contestant.fave_phrase}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
