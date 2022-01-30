@@ -1,0 +1,12 @@
+body >header {
+
+    background: repeating-linear-gradient(
+        67deg,
+        #606dbc,
+        #606dbc 10px,
+        #ff00b3 300px,
+        #00ff88 300px
+      );
+      color: white;
+    
+}

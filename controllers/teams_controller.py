@@ -10,18 +10,20 @@ teams_blueprint = Blueprint("teams", __name__)
 @teams_blueprint.route("/teams")
 def team():
     teams = team_repository.select_all()
-    return render_template("teams/index.html", teams = teams)
+    return render_template("teams/index.html", teams=teams)
 
 #team info displaying members
 @teams_blueprint.route("/teams/<id>")
 def show(id):
     team = team_repository.select(id)
     contestants = team_repository.show_members(team)
-    return render_template("locations/show.html", team=team, contestants=contestants)
+    return render_template("/teams/show.html", team=team, contestants=contestants)
 
-@teams_blueprint.route("teams/edit/<id>")
-def edit(id):
-    
+@teams_blueprint.route("/teams/edit/<id>", methods =["POST"])
+def edit_form(id):
+    team = team_repository.select(id)
+    return render_template("/teams/edit.html", team=team )
+
 
 # #New
 # @teams_blueprint.route("/teams/new")
