@@ -29,12 +29,12 @@ def select_all():
 def select(id):
     team = None
     
-    sql = "SELECT * FROM users WHERE id = %s"
+    sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['name'], result['points'])
+        team = Team(result['name'], result['points'], result['id'])
     return team
 
 #get team members

@@ -19,6 +19,11 @@ def team():
 #     contestants = team_repository.show_members(team)
 #     return render_template("/teams/show.html", team=team, contestants=contestants)
 
+@teams_blueprint.route("/teams/<id>", methods=['GET'])
+def show_team(id):
+    team = team_repository.select(id)
+    return render_template('teams/show.html', team=team)
+
 #Create
 @teams_blueprint.route("/teams/new", methods =["GET"])
 def new_team_form():
@@ -35,6 +40,19 @@ def new_team():
 
 #Read
 #Edit
+@teams_blueprint.route("/teams/<id>/edit", methods=['GET'])
+def edit_team_form(id):
+    team = team_repository.select(id)
+    return render_template('teams/edit.html', team=team)
+
+@teams_blueprint.route("/teams/<id>", methods = ["POST"])
+def update_team(id):
+    name = request.form['name']
+    points = request.form['points']
+    team = Team(name, points)
+    team_repository.update(team)
+    return redirect("/teams")
+
 #Update
 #Delete
 @teams_blueprint.route("/teams/<id>/delete", methods = ["POST"])

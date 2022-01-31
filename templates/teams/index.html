@@ -16,8 +16,7 @@
     <tr>
         <td>
             <!-- <a href="teams/{team.id}}"> -->
-            {{team.name}}
-
+            <td><a href="/teams/{{team.id}}">{{team.name}}</td>
     </td>
         <td>|</td>
         <td>{{team.points}}</td>
@@ -29,7 +28,7 @@
     <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
         <button class="trash-button"></button>
       </form>
-        <td><a href="/teams/edit/{{team.id}}">Edit</td>
+
     </tr>
     {% endfor %}
 </table>

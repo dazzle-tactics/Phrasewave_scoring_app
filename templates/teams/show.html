@@ -3,9 +3,10 @@
 {% block content %}
 <h1> {{team.name}} </h1>
 
-<p>Score: {{ team.score }}</p>
-
-<h3>Team members:</h3>
+<p>Score: {{ team.points }}</p>
+{{team.id}}
+<br><a href="/teams/{{team.id}}/edit">Edit</a>
+<!-- <h3>Team members:</h3>
 
 <ul>
     {% for contestant in contestants  %}
@@ -13,6 +14,6 @@
     <li>{{contestant.occupation}}</li>
     <li>{{contestant.fave_phrase}}</li>
     {% endfor %}
-</ul>
+</ul> -->
 
 {% endblock %}
