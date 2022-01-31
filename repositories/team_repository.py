@@ -58,7 +58,12 @@ def update(team):
 
 #Delete
 def delete(id):
-    sql = "DELETE FROM users WHERE id = %s"
+    sql = "DELETE FROM teams WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
+#Delete all
+
+def delete_all():
+    sql = "DELETE  FROM teams"
+    run_sql(sql)

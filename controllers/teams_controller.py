@@ -12,7 +12,7 @@ def team():
     teams = team_repository.select_all()
     return render_template("teams/index.html", teams=teams)
 
-#team info displaying members
+# team info displaying members
 @teams_blueprint.route("/teams/<id>")
 def show(id):
     team = team_repository.select(id)

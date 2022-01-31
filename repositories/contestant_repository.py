@@ -7,7 +7,7 @@ import repositories.team_repository as team_repository
 
 #Create
 def save(contestant):
-    sql = "INSERT INTO contestants (name, occupation, fave_phrase, team) VALUES (%s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO contestants (name, occupation, fave_phrase, team_id) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [contestant.name, contestant.occupation, contestant.fave_phrase, contestant.team.id]
     results = run_sql(sql,values)
     
@@ -43,8 +43,8 @@ def select(id):
 
 #Update
 def update(contestant):
-    sql = "UPDATE contestants SET (name, occupation, fave_phrase) = (%s, %s, %s) WHERE id = (%s)"
-    values = [contestant.name, contestant.occupation, contestant.fave_phrase, contestant.id]
+    sql = "UPDATE contestants SET (name, occupation, fave_phrase, team_id) = (%s, %s, %s, %s) WHERE id = (%s)"
+    values = [contestant.name, contestant.occupation, contestant.fave_phrase, contestant.team, contestant.id]
     run_sql(sql, values)
 
 #Delete
@@ -52,3 +52,8 @@ def delete(id):
     sql = "DELETE FROM contestants WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+#Delete all
+def delete_all():
+    sql = "DELETE  FROM contestants"
+    run_sql(sql)
