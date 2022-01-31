@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+    <tr>
+        <td>
+            <form action="/contestants" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation"><br><br>
+                <label for="fave_phrase">Fave_phrase:</label>
+                <input type="text" id="fave_phrase" name="fave_phrase"><br><br>
+                <label for="team">Team:</label>
+                <select name="team_id" id="team">
+                    {% for team in teams %}
+                    <option value="{{team.id}}">{{team.name}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        </td>
+    </tr>
+</table>
+{% endblock %}

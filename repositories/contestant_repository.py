@@ -23,8 +23,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        team = team_repository.select(row['team'])
-        contestant = Contestant(row['name'], row['occupation'], row['fave_phrase'], row['id'])
+        team = team_repository.select(row['team_id'])
+        contestant = Contestant(row['name'], row['occupation'], row['fave_phrase'],  row['id'], team)
         contestants.append(contestant)
     return contestants
 

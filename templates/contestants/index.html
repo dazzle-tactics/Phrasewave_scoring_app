@@ -1,24 +1,40 @@
-<!-- {% extends "base.html" %}
+{% extends "base.html" %}
 {% block content %}
 
+<body>
+    <td><a href="/contestants/new">New Contestant</a></td>
+<table>
+    <tr>
+        <!-- <th>ID</th>
+        <td>|</td>
+        <th>Name</th>
+        <td>|</td>
+        <th>Fave_Phrase</th>
+        <td>|</td>
+        <th>Team ID</th> -->
 
-{% for contestant in all_contestants %}
-  <div class="contestant">
-    <div class="content">
-      <a href="/contestants/{{contestant.id}}">{{contestant.name}}</a>
-      <div class="name">
-        {{contestant.occupation}}
-        <span class="fave_phrase">{{contestant.fave_phrase}}</span>
-        <p><i>{{contestant.team.name()}}</i></p>
-      </div>
-      <div class="buttons">
+    </tr>
+    {% for contestant in contestants %}
+    <tr>
+        <td>
+            <td><a href="/contestants/{{contestant.id}}">{{contestant.name}}</td>
+    </td>
+        <td>|</td>        
+        <td>{{contestant.occupation}}</td>
+        <td>|</td>
+        <td>{{contestant.fave_phrase}}</td>
+        <td>|</td>        
+        <td>{{contestant.id}}</td>
+        {{contestant.team.name}}
+    </tr>
+    </td>
 
-        <form class="delete-form" action="/contestants/{{contestant.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-        </form>
-      </div>
-    </div>
-  </div>
-{% endfor %}
+    <form class="delete-form" action="/contestant{{contestant.id}}/delete" method="POST">
+        <button class="trash-button"></button>
+      </form>
 
-{% endblock %} -->
+    </tr>
+    {% endfor %}
+</table>
+</body>
+{% endblock %}

@@ -8,15 +8,15 @@ contestants_blueprint = Blueprint("contestants", __name__)
 
 #Index
 @contestants_blueprint.route("/contestants")
-def contestants():
+def contestant():
     contestants = contestant_repository.select_all()
-    return render_template("contestants/index.html", all_contestants = contestants)
+    return render_template("contestants/index.html", contestants = contestants)
 
 #New
 @contestants_blueprint.route("/contestants/new")
 def new_contestant():
     teams = team_repository.select_all()
-    return render_template("contestants/new.html", all_teams = teams)
+    return render_template("contestants/new.html", teams=teams)
 
 #Create
 @contestants_blueprint.route("/contestants", methods=["POST"])
