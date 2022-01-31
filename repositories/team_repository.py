@@ -22,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        team = Team(row['name'], row['points'])
+        team = Team(row['name'], row['points'], row['id'])
         teams.append(team)
     return teams
 

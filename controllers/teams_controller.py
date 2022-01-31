@@ -37,7 +37,10 @@ def new_team():
 #Edit
 #Update
 #Delete
-
+@teams_blueprint.route("/teams/<id>/delete", methods = ["POST"])
+def delete_team(id):
+    team_repository.delete(id)
+    return redirect("/teams")
 
 # @locations_blueprint.route("/locations/<id>")
 # def show(id):

@@ -1,31 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
+
+<body>
+    <td><a href="/teams/new">New Team</a></td>
 <table>
     <tr>
         <th>Name</th>
         <td>|</td>
         <th>Score</th>
+        <td>|</td>
+        <th>Team ID</th>
+
     </tr>
     {% for team in teams %}
     <tr>
         <td>
-            <!-- <a href="teams/{team.id}}">
-            {{team.name}} -->
+            <!-- <a href="teams/{team.id}}"> -->
+            {{team.name}}
 
     </td>
         <td>|</td>
         <td>{{team.points}}</td>
+        <td>|</td>        
+        <td>{{team.id}}</td>
     </tr>
     </td>
-        <td>|</td>
-        <td><a href="/teams/edit/{{team.id}}">Edit</a></td>
-    </tr>
-    </td>
-        <td>|</td>
-        <td><a href="/teams/delete/{{team.id}}">Delete</td>
+
+    <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
+        <button class="trash-button"></button>
+      </form>
+        <td><a href="/teams/edit/{{team.id}}">Edit</td>
     </tr>
     {% endfor %}
 </table>
+</body>
 {% endblock %}
 
 
