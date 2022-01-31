@@ -13,32 +13,25 @@ def team():
     return render_template("teams/index.html", teams=teams)
 
 # team info displaying members
-@teams_blueprint.route("/teams/<id>")
-def show(id):
-    team = team_repository.select(id)
-    contestants = team_repository.show_members(team)
-    return render_template("/teams/show.html", team=team, contestants=contestants)
+# @teams_blueprint.route("/teams/<id>")
+# def show(id):
+#     team = team_repository.select(id)
+#     contestants = team_repository.show_members(team)
+#     return render_template("/teams/show.html", team=team, contestants=contestants)
 
-@teams_blueprint.route("/teams/edit/<id>", methods =["POST"])
-def edit_form(id):
-    team = team_repository.select(id)
-    return render_template("/teams/edit.html", team=team )
+#Create
+@teams_blueprint.route("/teams/new", methods =["GET"])
+def new_team_form():
+    return render_template("/teams/new.html")
 
+@teams_blueprint.route("/teams", methods = ["POST"])
+def new_team():
+    name = request.form['name']
+    points = request.form['points']
+    team = Team(name, points)
+    team_repository.save(team)
+    return redirect("/teams")
 
-# #New
-# @teams_blueprint.route("/teams/new")
-# def new_team():
-#     contestants = contestant_repository.select_all()
-#     return render_template("teams/new.html", all_contestants = contestants)
-
-# #Create
-# @teams_blueprint.route("/teams", methods=["POST"])
-# def create_team():
-#     name = request.form['name']
-#     points = request.form['points']
-#     team = Team(name, points)
-#     team_repository.save(team)
-#     return redirect("/teama")
 
 #Read
 #Edit

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+    <tr>
+        <td>
+            <form action="/teams" method="POST">
+                <label for="name">Team name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="score">Score:</label>
+                <input type="number" id="points" name="points"><br><br>
+                <input type="submit" value="Submit">
+              </form>
+    </tr>
+
+    </tr>
+
+</table>
+{% endblock %}
