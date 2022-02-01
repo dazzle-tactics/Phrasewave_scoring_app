@@ -3,6 +3,7 @@ from flask import Blueprint
 from repositories import contestant_repository
 from repositories import team_repository
 from models.contestant import Contestant
+import pdb
 
 contestants_blueprint = Blueprint("contestants", __name__)
 
@@ -40,9 +41,9 @@ def show_contestant(id):
 
 @contestants_blueprint.route("/contestants/<id>/edit", methods=['GET'])
 def edit_contestant_form(id):
-    team = team_repository.select_all()
+    teams = team_repository.select_all()
     contestant = contestant_repository.select(id)
-    return render_template('contestants/edit.html', contestant=contestant, team=team)
+    return render_template('contestants/edit.html', contestant=contestant, teams=teams)
 
 @contestants_blueprint.route("/contestants/<id>/edit", methods = ["POST"])
 def update_contestant(id):
@@ -50,7 +51,9 @@ def update_contestant(id):
     occupation = request.form['occupation']
     fave_phrase = request.form['fave_phrase']
     team = team_repository.select(request.form['team_id'])
+
     contestant = Contestant(name, occupation, fave_phrase, team, id)
+    pdb.set_trace()
     contestant_repository.update(contestant)
     return redirect("/contestants")
 

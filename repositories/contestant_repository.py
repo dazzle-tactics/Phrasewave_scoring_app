@@ -5,6 +5,7 @@ from db.run_sql import run_sql
 from models.contestant import Contestant
 from models.team import Team
 import repositories.team_repository as team_repository
+import pdb
 
 #Create
 def save(contestant):
@@ -32,7 +33,7 @@ def select_all():
 def select(id):
     contestant = None
     
-    sql = "SELECT * FROM contestants where id = %"
+    sql = "SELECT * FROM contestants where id = %s"
     values = [id]
     
     result = run_sql(sql, values)[0]

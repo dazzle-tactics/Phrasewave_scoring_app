@@ -11,9 +11,9 @@
                 <label for="fave_phrase">Favourite Phrase:</label>
                 <input type="text" id="fave_phrase" name="fave_phrase" value="{{contestant.fave_phrase}}">
                 <label for="Team">Team:</label>
-                <select name="team_id" id="team">
+                <select name="team_id" id="team_id">
                     {% for team in teams %}
-                    <option value={{contestant.team.id}}>{{contestant.team.name}}</option>
+                    <option value="{{team.id}}">{{team.name}}</option>
                     {% endfor %}
                 </select>
                 <input type="submit" value="Submit">
