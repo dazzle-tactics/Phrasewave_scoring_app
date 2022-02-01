@@ -42,9 +42,16 @@ table {
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.button {
-  background-color: yellow;
-  color:white;
+input[type=submit]{
+  background-color:midnightblue;
+  text-align: center;
+  color:mintcream;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  border-radius: 50%;
+}
+
+select{
+  background-color:midnightblue;
+  text-align: center;
+  color:mintcream;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

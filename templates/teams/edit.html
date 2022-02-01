@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
 <body>
     <table>
         <form method="POST" action="/teams/{{team.id}}/edit">

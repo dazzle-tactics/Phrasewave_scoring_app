@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 
 <table>
     <tr>
@@ -9,7 +10,7 @@
                 <input type="text" id="name" name="name"><br><br>
                 <label for="occupation">Occupation:</label>
                 <input type="text" id="occupation" name="occupation"><br><br>
-                <label for="fave_phrase">Fave_phrase:</label>
+                <label for="fave_phrase">Favourite phrase:</label>
                 <input type="text" id="fave_phrase" name="fave_phrase"><br><br>
                 <label for="team">Team:</label>
                 <select name="team_id" id="team">
