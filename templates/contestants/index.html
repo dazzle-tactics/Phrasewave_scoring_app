@@ -20,16 +20,20 @@
             <td><a href="/contestants/{{contestant.id}}">{{contestant.name}}</td>
     </td>
         <td>|</td>        
+        <td>{{contestant.id}}</td>
+        <td>|</td>        
         <td>{{contestant.occupation}}</td>
         <td>|</td>
         <td>{{contestant.fave_phrase}}</td>
         <td>|</td>        
-        <td>{{contestant.id}}</td>
-        {{contestant.team.name}}
+        <td>{{contestant.team}}</td>
+
+        <!-- <td>|</td>        
+        <td>{{team}}</td> -->
     </tr>
     </td>
 
-    <form class="delete-form" action="/contestant{{contestant.id}}/delete" method="POST">
+    <form class="delete-form" action="/contestants/{{contestant.id}}/delete" method="POST">
         <button class="trash-button"></button>
       </form>
 

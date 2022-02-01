@@ -31,6 +31,15 @@ def create_contestant():
     return redirect("/contestants")
 
 #Read
+@contestants_blueprint.route("/contestants/<id>")
+def show_contestant(id):
+    contestant = contestant_repository.select(id)
+    return render_template('contestants/show.html', contestant=contestant)
 #Edit
 #Update
 #Delete
+@contestants_blueprint.route("/contestants/<id>/delete", methods = ["POST"])
+def delete_contestant(id):
+    contestant_repository.delete(id)
+    return redirect("/contestants")
+

@@ -24,7 +24,7 @@ def select_all():
 
     for row in results:
         team = team_repository.select(row['team_id'])
-        contestant = Contestant(row['name'], row['occupation'], row['fave_phrase'],  row['id'], team)
+        contestant = Contestant(row['name'], row['occupation'], row['fave_phrase'], team, row['id'])
         contestants.append(contestant)
     return contestants
 

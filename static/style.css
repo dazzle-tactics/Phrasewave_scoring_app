@@ -1,12 +1,31 @@
-body >header {
-
-    background: repeating-linear-gradient(
-        67deg,
-        #606dbc,
-        #606dbc 10px,
-        #ff00b3 300px,
-        #00ff88 300px
-      );
-      color: white;
+body {
+  background: repeating-linear-gradient(
+      67deg,
+      #606dbc,
+      #606dbc 10px,
+      #ff00b3 300px,
+      #00ff88 300px
+    );
+    color: white;
     
+}
+header {
+  color:white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+a {
+  color: #00ff88;
+}
+
+table {
+  color:white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.button {
+  background-color: yellow;
+  color:white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  border-radius: 50%;
 }
