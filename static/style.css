@@ -7,6 +7,7 @@ body {
       #00ff88 300px
     );
     color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -17,17 +18,18 @@ header {
 header h1 { 
   font-size: 5em;
   color:white ;
+  text-align: center
 }
 
-header h2 { 
+h2 { 
   font-size: 2em;
-  color:white;
+  color:midnightblue;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 a {
-  color: #00ff88;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:aqua;
+  
 }
 
 button{
@@ -39,19 +41,28 @@ button{
 
 table {
   color:white;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+label {
+  color:white;
+}
+
+input [type=text] {
+  color: white
 }
 
 input[type=submit]{
   background-color:midnightblue;
   text-align: center;
   color:mintcream;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 select{
   background-color:midnightblue;
   text-align: center;
   color:mintcream;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav{
+  text-align: right
 }
