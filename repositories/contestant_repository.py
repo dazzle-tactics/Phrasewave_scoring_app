@@ -1,3 +1,4 @@
+from bdb import set_trace
 from cProfile import run
 from db.run_sql import run_sql
 
@@ -35,11 +36,10 @@ def select(id):
     values = [id]
     
     result = run_sql(sql, values)[0]
-
     if result is not None:
-      team = team_repository.select(result['team'])
-      contestant = Contestant(result['name'], result['occupation'], result['fave_phrase'], result['id'])
-    return team
+        team = team_repository.select(result['team_id'])
+        contestant = Contestant(result['name'], result['occupation'], result['fave_phrase'], team, result['id'])
+    return contestant
 
 #Update
 def update(contestant):

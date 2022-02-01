@@ -17,7 +17,7 @@
     {% for contestant in contestants %}
     <tr>
         <td>
-            <td><a href="/contestants/{{contestant.id}}">{{contestant.name}}</td>
+            <td><a href="/contestants/{{contestant.id}}/edit">{{contestant.name}}</td>
     </td>
         <td>|</td>        
         <td>{{contestant.id}}</td>
@@ -26,7 +26,7 @@
         <td>|</td>
         <td>{{contestant.fave_phrase}}</td>
         <td>|</td>        
-        <td>{{contestant.team}}</td>
+        <td>{{contestant.team.name}}</td>
 
         <!-- <td>|</td>        
         <td>{{team}}</td> -->

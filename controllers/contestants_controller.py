@@ -49,10 +49,10 @@ def update_contestant(id):
     name = request.form['name']
     occupation = request.form['occupation']
     fave_phrase = request.form['fave_phrase']
-    team = team_repository.select(id)
+    team = team_repository.select(request.form['team_id'])
     contestant = Contestant(name, occupation, fave_phrase, team, id)
-    team_repository.update(team)
-    return redirect("/teams")
+    contestant_repository.update(contestant)
+    return redirect("/contestants")
 
 #Delete
 @contestants_blueprint.route("/contestants/<id>/delete", methods = ["POST"])

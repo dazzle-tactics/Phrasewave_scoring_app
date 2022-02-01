@@ -2,10 +2,6 @@
 {% block content %}
 <table>
     <tr>
-        <th>Name</th>
-        <td>|</td>
-        <th>Score</th>
-
         <td>
             <form method="POST" action="/teams/{{team.id}}/edit">
                 <label for="name">Team name:</label>
@@ -15,8 +11,5 @@
                 <input type="submit" value="Submit">
               </form>
     </tr>
-
-    </tr>
-
 </table>
 {% endblock %}
