@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 <body>
-    <form method="POST" action="/teams/{{team.id}}/edit">
-        <label for="name">Team name:</label>
-        <input type="text" id="name" name="name" value="{{team.name}}">
-        <label for="points">Score:</label>
-        <input type="number" id="points" name="points" value="{{team.points}}" step=0.01>
-        <input type="submit" value="Submit">
-    </form>
+    <table>
+        <form method="POST" action="/teams/{{team.id}}/edit">
+            <label for="name">Team name:</label>
+            <input type="text" id="name" name="name" value="{{team.name}}">
+            <label for="points">Score:</label>
+            <input type="number" id="points" name="points" value="{{team.points}}" step=0.01>
+            <input type="submit" value="Submit">
+        </form>
+    </table>
 </body>
 {% endblock %}
