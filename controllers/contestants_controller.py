@@ -37,6 +37,23 @@ def show_contestant(id):
     return render_template('contestants/show.html', contestant=contestant)
 #Edit
 #Update
+
+@contestants_blueprint.route("/contestants/<id>/edit", methods=['GET'])
+def edit_contestant_form(id):
+    team = team_repository.select_all()
+    contestant = contestant_repository.select(id)
+    return render_template('contestants/edit.html', contestant=contestant, team=team)
+
+@contestants_blueprint.route("/contestants/<id>/edit", methods = ["POST"])
+def update_contestant(id):
+    name = request.form['name']
+    occupation = request.form['occupation']
+    fave_phrase = request.form['fave_phrase']
+    team = team_repository.select(id)
+    contestant = Contestant(name, occupation, fave_phrase, team, id)
+    team_repository.update(team)
+    return redirect("/teams")
+
 #Delete
 @contestants_blueprint.route("/contestants/<id>/delete", methods = ["POST"])
 def delete_contestant(id):

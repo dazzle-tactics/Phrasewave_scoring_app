@@ -3,6 +3,7 @@ from flask import Blueprint
 from repositories.contestant_repository import *
 from repositories.team_repository import *
 from models.team import Team
+import pdb
 
 teams_blueprint = Blueprint("teams", __name__)
 
@@ -51,6 +52,7 @@ def update_team(id):
     name = request.form['name']
     points = request.form['points']
     team = Team(name, points, id)
+    # pdb.set_trace()
     team_repository.update(team)
     return redirect("/teams")
 
