@@ -23,6 +23,9 @@ contestant_04 = Contestant("Hello Kitty", "Cutesy Cat", "The early bird gets the
 contestant_repository.save(contestant_04)
 
 
+contestant_04 = Contestant("update cat", "Cutesy Cat", "example", team_02)
+contestant_repository.update(contestant_04)
+
 # contestant_repository.delete(1)
 # team_repository.delete(1)
 

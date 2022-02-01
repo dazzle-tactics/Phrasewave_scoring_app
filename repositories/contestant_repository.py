@@ -45,7 +45,7 @@ def select(id):
 #Update
 def update(contestant):
     sql = "UPDATE contestants SET (name, occupation, fave_phrase, team_id) = (%s, %s, %s, %s) WHERE id = (%s)"
-    values = [contestant.name, contestant.occupation, contestant.fave_phrase, contestant.team, contestant.id]
+    values = [contestant.name, contestant.occupation, contestant.fave_phrase, contestant.team.id, contestant.id]
     run_sql(sql, values)
 
 #Delete

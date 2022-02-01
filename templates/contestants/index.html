@@ -2,43 +2,32 @@
 {% block content %}
 
 <body>
-    <td><a href="/contestants/new">New Contestant</a></td>
-<table>
-    <tr>
-        <!-- <th>ID</th>
-        <td>|</td>
-        <th>Name</th>
-        <td>|</td>
-        <th>Fave_Phrase</th>
-        <td>|</td>
-        <th>Team ID</th> -->
-
-    </tr>
-    {% for contestant in contestants %}
-    <tr>
-        <td>
+    <h2>CONTESTANTS</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Favourite Phrase</th>
+            <th>Team</th>
+        </tr>
+        {% for contestant in contestants %}
+        <tr>
             <td><a href="/contestants/{{contestant.id}}/edit">{{contestant.name}}</td>
-    </td>
-        <td>|</td>        
-        <td>{{contestant.id}}</td>
-        <td>|</td>        
-        <td>{{contestant.occupation}}</td>
-        <td>|</td>
-        <td>{{contestant.fave_phrase}}</td>
-        <td>|</td>        
-        <td>{{contestant.team.name}}</td>
+            <td>{{contestant.occupation}}</td>
+            <td>{{contestant.fave_phrase}}</td>   
+            <td>{{contestant.team.name}}</td>
+            <td><form class="delete-form" action="/contestants/{{contestant.id}}/delete" method="POST">
+                <button class="trash-button">Delete</button></td>
+            </form>
+        </tr>
+        </td>
 
-        <!-- <td>|</td>        
-        <td>{{team}}</td> -->
-    </tr>
-    </td>
+        
 
-    <form class="delete-form" action="/contestants/{{contestant.id}}/delete" method="POST">
-        <button class="trash-button"></button>
-      </form>
-
-    </tr>
-    {% endfor %}
-</table>
+        </tr>
+        {% endfor %}
+    </table>
+    <button><a href="/contestants/new">Add Contestant</a></button>
 </body>
 {% endblock %}

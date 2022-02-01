@@ -52,7 +52,6 @@ def update_team(id):
     name = request.form['name']
     points = request.form['points']
     team = Team(name, points, id)
-    # pdb.set_trace()
     team_repository.update(team)
     return redirect("/teams")
 

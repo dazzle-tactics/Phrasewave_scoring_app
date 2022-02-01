@@ -47,13 +47,13 @@ def edit_contestant_form(id):
 
 @contestants_blueprint.route("/contestants/<id>/edit", methods = ["POST"])
 def update_contestant(id):
-    name = request.form['name']
-    occupation = request.form['occupation']
-    fave_phrase = request.form['fave_phrase']
+    contestant = contestant_repository.select(id)
+    contestant.name = request.form['name']
+    contestant.occupation = request.form['occupation']
+    contestant.fave_phrase = request.form['fave_phrase']
     team = team_repository.select(request.form['team_id'])
-
-    contestant = Contestant(name, occupation, fave_phrase, team, id)
-    pdb.set_trace()
+    contestant.team = team
+       
     contestant_repository.update(contestant)
     return redirect("/contestants")
 

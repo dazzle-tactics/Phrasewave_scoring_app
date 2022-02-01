@@ -7,25 +7,44 @@ body {
       #00ff88 300px
     );
     color: white;
-    
 }
+
 header {
   color:white;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header h1 { 
+  font-size: 5em;
+  color:white ;
+}
+
+header h2 { 
+  font-size: 2em;
+  color:white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 a {
   color: #00ff88;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+button{
+  background-color:midnightblue;
+  text-align: center;
+  color:mintcream;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 table {
   color:white;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .button {
   background-color: yellow;
   color:white;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-radius: 50%;
 }
